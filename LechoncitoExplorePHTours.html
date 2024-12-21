@@ -1,11 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>My First Web Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore PH Tours</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    header img.logo {
+      max-width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    header img.banner {
+      width: 100%;
+      height: auto;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    .cta {
+      background-color: #ff6b6b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .cta button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .cta button:hover {
+      background-color: #555;
+    }
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      margin-top: 30px;
+    }
+    footer a {
+      color: #ff6b6b;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
- <h1>Hi! I am Josef Neil S. Lechoncito! hehe</h1>
+
+  <header>
+    <img src="logo-placeholder.png" alt="Explore PH Logo" class="logo">
+    <img src="banner-placeholder.jpg" alt="Explore PH Banner" class="banner">
+    <h1>Explore PH Tours</h1>
+    <p>Your Gateway to the Philippines!</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#promos">Promos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  
+  <main>
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>We offer:</p>
+      <ul>
+        <li>Island Hopping Tours</li>
+        <li>Guided City Tours</li>
+        <li>Mountain Trekking Packages</li>
+        <li>Hotel and Transport Reservations</li>
+        <li>Customized Travel Itineraries</li>
+      </ul>
+    </section>
+
+   
+    <section id="promos">
+      <h2>Special Promos</h2>
+      <h3>Current Deals:</h3>
+      <ul>
+        <li>"3+1 Free" group packages</li>
+        <li>20% discount on bookings made at least a month in advance</li>
+        <li>Special weekend rates for island hopping in Cebu</li>
+      </ul>
+    </section>
+
+    
+    <section>
+      <h2>Popular Packages</h2>
+      <p>Discover:</p>
+      <ul>
+        <li>Manila: Historic Intramuros Tour with Food Crawl</li>
+        <li>Cebu: Whale Shark Watching and Kawasan Falls Adventure</li>
+        <li>Davao: Mt. Apo Climbing Experience</li>
+      </ul>
+    </section>
+
+   
+    <section class="cta">
+      <h2>Book Your Next Adventure Today!</h2>
+      <p>Explore the Philippines like never before with our exciting packages. Limited slots available for promo deals. Don't miss out!</p>
+      <button onclick="window.location.href='#contact'">Book Now</button>
+    </section>
+  </main>
+
+  
+  <section id="branches">
+    <h2>Contact Our Branches</h2>
+    <p><strong>Manila:</strong> (+63) 123-4567</p>
+    <p><strong>Cebu:</strong> (+63) 234-5678</p>
+    <p><strong>Davao:</strong> (+63) 345-6789</p>
+  </section>
+
+ 
+  <footer>
+    <p>Follow us on: 
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </p>
+    <p>&copy; 2024 Explore PH Tours. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
