@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API Example</title>
+</head>
+<body>
+    <h1>Weather Data</h1>
+    <button onclick="fetchWeather()">Get Weather</button>
+    <p><strong>City:</strong> <span id="city">--</span></p>
+    <p><strong>Temperature:</strong> <span id="temp">--</span></p>
+    <p><strong>Condition:</strong> <span id="condition">--</span></p>
+
+    <script>
+        const apiKey = '9fd356b9f8bff01988ad49655a50eb5f';
+        const city = 'London';
+
+        function fetchWeather() {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("city").textContent = data.name;
+                    document.getElementById("temp").textContent = `${data.main.temp}°C`;
+                    document.getElementById("condition").textContent = data.weather[0].description;
+                })
+                .catch(err => console.error('Error:', err));
+        }
+    </script>
+</body>
+</html>

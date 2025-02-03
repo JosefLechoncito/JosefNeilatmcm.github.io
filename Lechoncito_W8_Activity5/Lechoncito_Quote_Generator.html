@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        #quoteBox {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <div id="quoteBox">
+        <p id="quote">Click the button to get a quote!</p>
+        <p id="author"></p>
+    </div>
+    <button onclick="fetchQuote()">New Quote</button>
+    <button onclick="copyQuote()">Copy</button>
+
+    <script>
+        function fetchQuote() {
+            fetch('https://dummyjson.com/quotes')
+                .then(res => res.json())
+                .then(data => {
+                    let randomQuote = data.quotes[Math.floor(Math.random() * data.quotes.length)];
+                    document.getElementById("quote").textContent = `"${randomQuote.quote}"`;
+                    document.getElementById("author").textContent = `- ${randomQuote.author}`;
+                })
+                .catch(() => {
+                    document.getElementById("quote").textContent = "Failed to load quote.";
+                });
+        }
+
+        function copyQuote() {
+            let text = document.getElementById("quote").textContent + " " + document.getElementById("author").textContent;
+            navigator.clipboard.writeText(text).then(() => alert("Quote copied!"));
+        }
+
+        fetchQuote(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+</head>
+<body>
+    <h1>Random User Data</h1>
+    <div id="userData"></div>
+
+    <script>
+        fetch('https://randomuser.me/api/')
+            .then(res => res.json())
+            .then(data => {
+                const user = data.results[0];
+                document.getElementById('userData').innerHTML = `
+                    <p>Name: ${user.name.first} ${user.name.last}</p>
+                    <p>Email: ${user.email}</p>
+                    <p>Location: ${user.location.city}, ${user.location.country}</p>
+                    <p>Phone: ${user.phone}</p>
+                    <img src="${user.picture.medium}" alt="User Image">
+                `;
+            })
+            .catch(err => console.error('Error:', err));
+    </script>
+</body>
+</html>

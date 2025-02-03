@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Game Title Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        #gameTitleBox {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 1.5em;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Game Title Generator</h1>
+    <div id="gameTitleBox">Click below to generate a game title!</div>
+    <button onclick="generateTitle()">Generate Title</button>
+    <button onclick="copyTitle()">Copy</button>
+
+    <script>
+        function generateTitle() {
+            fetch('https://random-word-api.herokuapp.com/word?number=3')
+                .then(response => response.json())
+                .then(words => {
+                    let title = words.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+                    document.getElementById("gameTitleBox").textContent = title;
+                })
+                .catch(() => {
+                    document.getElementById("gameTitleBox").textContent = "Failed to generate title.";
+                });
+        }
+
+        function copyTitle() {
+            let title = document.getElementById("gameTitleBox").textContent;
+            navigator.clipboard.writeText(title).then(() => alert("Title copied!"));
+        }
+    </script>
+</body>
+</html>
