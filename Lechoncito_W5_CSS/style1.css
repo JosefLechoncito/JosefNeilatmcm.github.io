@@ -1,0 +1,30 @@
+.container-top
+{
+    background-color: red;
+    margin:0px;
+    height: 100px;
+    width: 100px;
+    text-align: left;
+}
+.container-bot
+{
+    background-color: blue;
+    margin:0px;
+    height: 100px;
+    width: 100px;
+    text-align: left;
+}
+.outer-top
+{
+border: 28px purple solid;
+height: 100px;
+    width: 100px;
+    margin: 30px;
+}
+.outer-bot
+{
+    border: 30px purple solid;
+    height: 100px;
+    width: 100px;
+    margin:30px;
+}

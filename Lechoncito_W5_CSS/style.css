@@ -1,0 +1,44 @@
+.image-flower
+{
+    width: 350px;
+    
+}
+.image-align
+{
+    align-content: center;
+}
+.text-aligner
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.border-text
+{
+    border: 3px gray solid;
+    width: 350px;
+    height: 80px;
+    
+}
+body
+{
+    margin: 0px;
+    border: 0px;
+}
+.container-top
+{
+background-color: red;
+text-align: left;
+margin: 0px;
+
+
+}
+.container-bot
+{
+background-color: blue;
+text-align: left;
+margin: 0px;
+
+
+}
